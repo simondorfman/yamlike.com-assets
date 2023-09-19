@@ -1,0 +1,108 @@
+sequenceDiagram
+    autonumber
+
+    participant Checking as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Personal Checking Account
+
+    participant 401k as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: 401k with Former Employer
+
+    participant IRA as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Traditional Self Directed IRA
+
+    participant BizChecking as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: IRA LLC Business Checking Account
+
+    participant CEX as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Centralized Exchange
+
+    participant Wallet as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Self Custody Wallet
+
+    participant Validator as FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Solo Ethereum Validator Node
+
+    rect rgb(245, 245, 245)
+    401k->>IRA: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Rollover $USD via Mailed Check or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>BizChecking: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Deposit $USD via Mailed Check or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    BizChecking->>CEX: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Deposit $USD via ACH or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->CEX: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Buy 32+ ETH with $USD
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->>Wallet: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Send 32+ ETH via Ethereum Mainnet
+    end
+
+    rect rgb(245, 245, 245)
+    Wallet->>Validator: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Stake 32 ETH
+    end
+
+    rect rgb(245, 245, 245)
+    Validator->>Validator: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Earn ETH rewards for staking
+    end
+
+    rect rgb(245, 245, 245)
+    Validator->>Wallet: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Periodically withdraw ETH rewards
+    end
+
+    rect rgb(245, 245, 245)
+    Wallet->>CEX: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Periodically send ETH rewards
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->CEX: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Periodically sell ETH rewards for $USD
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->>BizChecking: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Periodically send $USD via ACH
+    end
+
+    rect rgb(245, 245, 245)
+    BizChecking->>IRA: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Periodically send $USD via Check
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>IRA: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Annually, report value of 32+ ETH in $USD
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>Checking: FIXED_WIDTH_BOX_000022
+    %%change in graphics editor to: Once I turn 59½ years old, <br/>start taking monthly $USD retirement withdrawals via ACH
+    end
+
+    %%green dollar color:
+    %%rect rgb(133, 187, 101)
+
+    %%purple eth color:
+    %%rect rgb(138, 146, 178)
+
+%%{
+  init: {
+    'theme': 'default',
+    'themeVariables': {
+      'fontFamily': 'Inter'
+    }
+  }
+}%%

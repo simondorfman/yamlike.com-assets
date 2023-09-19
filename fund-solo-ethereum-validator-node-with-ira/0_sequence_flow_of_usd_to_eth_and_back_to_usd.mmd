@@ -1,0 +1,87 @@
+sequenceDiagram
+    autonumber
+
+    participant Checking as Personal Checking Account
+
+    participant 401k as 401k with Former Employer
+
+    participant IRA as Traditional Self Directed IRA
+
+    participant BizChecking as IRA LLC Business Checking Account
+
+    participant CEX as Centralized Exchange
+
+    participant Wallet as Self Custody Wallet
+
+    participant Validator as Solo Ethereum Validator Node
+
+    rect rgb(245, 245, 245)
+    401k->>IRA: Rollover $USD via Mailed Check or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>BizChecking: Deposit $USD via Mailed Check or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    BizChecking->>CEX: Deposit $USD via ACH or Wire
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->CEX: Buy 32+ ETH with $USD
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->>Wallet: Send 32+ ETH via Ethereum Mainnet
+    end
+
+    rect rgb(245, 245, 245)
+    Wallet->>Validator: Stake 32 ETH
+    end
+
+    rect rgb(245, 245, 245)
+    Validator->>Validator: Earn ETH rewards for staking
+    end
+
+    rect rgb(245, 245, 245)
+    Validator->>Wallet: Periodically withdraw ETH rewards
+    end
+
+    rect rgb(245, 245, 245)
+    Wallet->>CEX: Periodically send ETH rewards
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->CEX: Periodically sell ETH rewards for $USD
+    end
+
+    rect rgb(245, 245, 245)
+    CEX->>BizChecking: Periodically send $USD via ACH
+    end
+
+    rect rgb(245, 245, 245)
+    BizChecking->>IRA: Periodically send $USD via Check
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>IRA: Annually, report value of 32+ ETH in $USD
+    end
+
+    rect rgb(245, 245, 245)
+    IRA->>Checking: Once I turn 59½ years old, <br/>start taking monthly $USD <br/>retirement withdrawals via ACH
+    end
+
+    %%green dollar color:
+    %%rect rgb(133, 187, 101)
+
+    %%purple eth color:
+    %%rect rgb(138, 146, 178)
+
+%%{
+  init: {
+    'theme': 'default',
+    'themeVariables': {
+      'fontFamily': 'Inter'
+    }
+  }
+}%%
